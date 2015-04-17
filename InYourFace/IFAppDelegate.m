@@ -7,12 +7,18 @@
 //
 
 #import "IFAppDelegate.h"
+#import "IFViewController.h"
 
 @implementation IFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    UIViewController *viewController = [UIViewController new];
+    
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
